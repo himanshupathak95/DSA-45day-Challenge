@@ -8,16 +8,18 @@ void file_io()
     #endif
 }
 
-int findDuplicate(vector<int>& nums) {
+vector<int> findDuplicates(vector<int>& nums) {
       
-      sort(nums.begin(), nums.end());
-      
-      for(int i=0; i<nums.size(); i++)
-      {
-        if(nums[i] == nums[i+1])
-          return nums[i];
-      }
-        return nums.size()-1;
+    map<int, int> mp;
+    for(auto &x: nums)
+    mp[x]++;
+    vector<int> ans;
+    for(auto &x : mp)
+    if(x.second == 2)
+        ans.push_back(x.first);
+    
+    return ans;
+    
 }
 
 int main()
