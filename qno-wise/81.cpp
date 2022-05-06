@@ -21,8 +21,8 @@ ListNode* middleNode(ListNode* head) {
     
     while(t2 && t2->next != NULL)
     {
-    t1 = t1->next;
-    t2 = t2->next->next;
+        t1 = t1->next;
+        t2 = t2->next->next;
     }
     
     return t1;
